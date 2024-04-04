@@ -21,7 +21,7 @@
             <h1>APExPredator</h1>
             <section>
                 <p>O jogo APExPredator é baseado em cartas associadas a diferentes animais onde cada animal tem um status de força que é utilizado para determinar um vencedor.</p>
-                <p>Durante o jogo, o jogador recebe um deck de 3 cartas, onde ele pode escolher uma das três para o turno que irá iniciar após a escolha.</p>
+                <p>Durante o jogo, o jogador recebe um deck de 3 cartas, onde ele pode escolher uma das três para o turno que irá iniciar após a escolha, em seguida ele pode escolher entre uma das cartas que o adversário possui.</p>
                 <p>Caso a carta do jogador seja mais forte que a carta do adversário, o jogador ganha um ponto, caso contrário o adversário ganha um ponto, em caso de empate ambos ganham um ponto.</p>
                 <p>Ganha a rodada quem conseguir atingir dois pontos primeiro, no caso dos dois entrarem em empate com dois mais um turno será jogado, caso haja empate no terceiro turno a rodada termina em empate.</p>
             </section>
