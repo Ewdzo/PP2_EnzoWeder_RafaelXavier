@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="../../assets/leaf_icon.png" type="image/x-icon">
 </head>
 <body>
     <header>
