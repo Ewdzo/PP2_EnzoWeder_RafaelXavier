@@ -1,0 +1,126 @@
+.hidden {
+    display: none !important;
+}
+
+.flip-card {
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+    width: 150px;
+    height: 250px;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card {
+    position: absolute;
+    
+    background-color: #01991560;
+    border: solid #00751b 5px;
+    border-radius: 10px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+    font-size: 1.2em;
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+
+.show {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    transform: rotateY(180deg);
+    justify-content: space-between;
+}
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 45%;
+    
+    gap: 0.2em;
+    background: #ffffff59;
+    color: #FFF;
+}
+
+.card > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    flex-grow: 1;
+}
+
+#user-deck {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+#user-deck > .flip-card:hover {
+    transform: scale(1.2);
+    transition: all 1s;
+
+}
+
+#user-deck > .flip-card:hover > .flip-card-inner > .card {
+    transition: all 1s;
+    box-shadow: 0 0 50px 10px #48ABE080;
+}
+
+#bot-deck {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    transform: translateY(-25%);
+}
+
+#game-screen {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    overflow: hidden;
+}
+
+#user-selected {
+    animation: selectCard 2s forwards;
+}
+
+@keyframes selectCard {
+    0% {
+
+    }
+    50% {
+        width: 150px;
+    }
+    100% {
+        transform: translateY(150%);
+        width: 0;
+        display: none;
+    }
+}
