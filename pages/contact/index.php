@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <h1>🍃 APExPredator 🍃</h1>
+        <a href="../../"><h1>🍃 APExPredator 🍃</h1></a>
         <nav>
             <a href="../../">Início</a>
             <a href="../game/">Jogar</a>
