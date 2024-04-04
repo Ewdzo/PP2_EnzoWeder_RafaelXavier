@@ -44,7 +44,7 @@
     <footer>
         <a href="https://ufu.br">UFU</a>
         <h2>Enzo Weder & Rafael Pimenta @ 2024</h2>
-        <a href="./pages/contact/"">Fale Conosco</a>
+        <a href="../contact/"">Fale Conosco</a>
     </footer>
 </body>
 

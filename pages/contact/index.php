@@ -19,11 +19,17 @@
         </nav>
     </header>
     <main>
+        <article>
+            <h1>Entrar em Contato</h1>
+            <section>
+                <p>Em caso de dúvidas, sugestões, comentários, ou alguma outra mensagem em geral, preencha o formulário abaixo.</p>
+            </section>
+        </article>
     </main>
     <footer>
         <a href="https://ufu.br">UFU</a>
         <h2>Enzo Weder & Rafael Pimenta @ 2024</h2>
-        <a href="./pages/contact/"">Fale Conosco</a>
+        <a href="./"">Fale Conosco</a>
     </footer>
 </body>
 
