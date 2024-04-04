@@ -11,7 +11,12 @@
 </head>
 <body>
     <header>
-
+        <h1>🍃 APExPredator 🍃</h1>
+        <nav>
+            <a href="../../">Início</a>
+            <a href="./"  id="current-page">Jogar</a>
+            <a href="../contact/">Contato</a>
+        </nav>
     </header>
     <main>
         <div id="game-screen">
@@ -36,6 +41,11 @@
             <div id="user-deck"></div>
         </div>
     </main>
+    <footer>
+        <a href="https://ufu.br">UFU</a>
+        <h2>Enzo Weder & Rafael Pimenta @ 2024</h2>
+        <a href="./pages/contact/"">Fale Conosco</a>
+    </footer>
 </body>
 
 </html>
