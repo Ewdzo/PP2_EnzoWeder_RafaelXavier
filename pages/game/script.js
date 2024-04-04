@@ -112,13 +112,13 @@ const animalFight = async () => {
         document.getElementById("user-selected").setAttribute("id", "");
         player.selectedCard = null;
         bot.selectedCard = null;
-    }, 2500);
 
-    setTimeout(function () {
         if (player.points >= 2 && player.points > bot.points) document.getElementById("scoreboard").textContent = "VOCÊ GANHOU!"
         else if (bot.points >= 2 && player.points < bot.points) document.getElementById("scoreboard").textContent = "VOCÊ PERDEU!"
         else if (player.points == bot.points && player.deck.length == 0 && bot.deck.length == 0) document.getElementById("scoreboard").textContent = "EMPATE!"
-    }, 10000);
+    
+        document.getElementsByClassName('flip-card').forEach((e,i) => e.onclick = "");
+    }, 2500);
 }
 
 player.deck = getDeck();

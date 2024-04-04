@@ -29,7 +29,7 @@
             <h1>Animais</h1>
             <section >
                 <p>O jogo APExPredator é baseado em cartas associadas aos seguintes animais:</p>
-                <div class="flip-card hidden">
+                <div class="flip-card hidden flipped">
                     <div class="flip-card-inner">
                         <article class="card card-front">
                             <div>
