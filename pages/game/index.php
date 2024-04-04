@@ -38,6 +38,7 @@
                 </div>
             </div>
             <div id="bot-deck"></div>
+            <div id="scoreboard">0 x 0</div>
             <div id="user-deck"></div>
         </div>
     </main>

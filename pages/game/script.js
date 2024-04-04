@@ -43,12 +43,18 @@ const getDeck = () => {
 
 const player = {
     deck: null,
-    points: 0
+    points: 0,
+    selectedCard: null
 }
 
 const bot = {
     deck: null,
-    points: 0
+    points: 0,
+    selectedCard: null
+}
+
+const updateScoreboard = () => {
+    document.getElementById("scoreboard").textContent = `${player.points} x ${bot.points}`
 }
 
 const generateCard = (id, card, user) => {
@@ -58,26 +64,58 @@ const generateCard = (id, card, user) => {
     const animalIcon = flipCardDiv[1].childNodes[1];
     const animalName = flipCardDiv[1].childNodes[3];
     const animalAttack = flipCardDiv[3].childNodes[3];
-    
+
     animalIcon.textContent = card.icon;
     animalName.textContent = card.name;
     animalAttack.textContent = card.attack
-    
-    if(user) {
+
+    if (user) {
         flipCard.childNodes[1].classList.toggle('show');
-        // flipCard.onclick = () => flipCard.childNodes[1].classList.toggle('show');
-        flipCard.onclick = () => flipCard.setAttribute("id", "user-selected");
+        flipCard.onclick = () => {
+            if (!player.selectedCard) {
+                flipCard.setAttribute("id", "user-selected");
+                player.selectedCard = card;
+                player.deck.splice(player.deck.indexOf(card), 1)
+            }
+
+            if(player.selectedCard && bot.selectedCard) animalFight();
+        }
+    } else {
+        flipCard.onclick = () => {
+            if (!bot.selectedCard && player.selectedCard) {
+                flipCard.setAttribute("id", "bot-selected");
+                bot.selectedCard = card;
+                bot.deck.splice(bot.deck.indexOf(card), 1)
+            }
+
+            if(player.selectedCard && bot.selectedCard) animalFight();
+        }
     }
 
     document.getElementById(id).appendChild(flipCard);
 };
 
-const animalFight = () => {
+const animalFight = async () => {
+    setTimeout(function() {
+        if(player.selectedCard.attack > bot.selectedCard.attack) player.points++
+        else if(player.selectedCard.attack < bot.selectedCard.attack) bot.points++
+        else {
+            player.points++
+            bot.points++
+        }
     
+        player.selectedCard = null;
+        bot.selectedCard = null;
+    
+        updateScoreboard();
+
+        document.getElementById("bot-selected").classList.add('hide-bot-card');
+        document.getElementById("user-selected").classList.add('hide-player-card');
+      }, 2500);
 }
 
 player.deck = getDeck();
 bot.deck = getDeck();
 
-player.deck.forEach( (e, i) => generateCard("user-deck", e, true))
-bot.deck.forEach( (e, i) => generateCard("bot-deck", e))
+player.deck.forEach((e, i) => generateCard("user-deck", e, true))
+bot.deck.forEach((e, i) => generateCard("bot-deck", e))
