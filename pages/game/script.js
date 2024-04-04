@@ -78,7 +78,7 @@ const generateCard = (id, card, user) => {
                 player.deck.splice(player.deck.indexOf(card), 1)
             }
 
-            if(player.selectedCard && bot.selectedCard) animalFight();
+            if (player.selectedCard && bot.selectedCard) animalFight();
         }
     } else {
         flipCard.onclick = () => {
@@ -88,7 +88,7 @@ const generateCard = (id, card, user) => {
                 bot.deck.splice(bot.deck.indexOf(card), 1)
             }
 
-            if(player.selectedCard && bot.selectedCard) animalFight();
+            if (player.selectedCard && bot.selectedCard) animalFight();
         }
     }
 
@@ -96,22 +96,29 @@ const generateCard = (id, card, user) => {
 };
 
 const animalFight = async () => {
-    setTimeout(function() {
-        if(player.selectedCard.attack > bot.selectedCard.attack) player.points++
-        else if(player.selectedCard.attack < bot.selectedCard.attack) bot.points++
+    setTimeout(function () {
+        if (player.selectedCard.attack > bot.selectedCard.attack) player.points++
+        else if (player.selectedCard.attack < bot.selectedCard.attack) bot.points++
         else {
             player.points++
             bot.points++
         }
-    
-        player.selectedCard = null;
-        bot.selectedCard = null;
-    
+
         updateScoreboard();
 
         document.getElementById("bot-selected").classList.add('hide-bot-card');
+        document.getElementById("bot-selected").setAttribute("id", "");
         document.getElementById("user-selected").classList.add('hide-player-card');
-      }, 2500);
+        document.getElementById("user-selected").setAttribute("id", "");
+        player.selectedCard = null;
+        bot.selectedCard = null;
+    }, 2500);
+
+    setTimeout(function () {
+        if (player.points >= 2 && player.points > bot.points) document.getElementById("scoreboard").textContent = "VOCÊ GANHOU!"
+        else if (bot.points >= 2 && player.points < bot.points) document.getElementById("scoreboard").textContent = "VOCÊ PERDEU!"
+        else if (player.points == bot.points && player.deck.length == 0 && bot.deck.length == 0) document.getElementById("scoreboard").textContent = "EMPATE!"
+    }, 10000);
 }
 
 player.deck = getDeck();
@@ -119,3 +126,5 @@ bot.deck = getDeck();
 
 player.deck.forEach((e, i) => generateCard("user-deck", e, true))
 bot.deck.forEach((e, i) => generateCard("bot-deck", e))
+
+document.getElementById("reload-button").onclick = () => location.reload();

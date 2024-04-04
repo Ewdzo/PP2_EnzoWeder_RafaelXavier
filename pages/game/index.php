@@ -39,6 +39,7 @@
             </div>
             <div id="bot-deck"></div>
             <div id="scoreboard">0 x 0</div>
+            <button type="button" id="reload-button">Reiniciar</button>
             <div id="user-deck"></div>
         </div>
     </main>
