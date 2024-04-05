@@ -4,4 +4,4 @@ APExPredator é um projeto criado como trabalho final da disciplina de Programa�
 
 O projeto foi desenvolvido pelos alunos Enzo Weder e Rafael Xavier.
 
-O link de hospedagem é https://ewdzo.github.io/TF_EnzoWeder_RafaelXavier/
+O link de hospedagem é https://ewdzo.github.io/PP2_EnzoWeder_RafaelXavier/
